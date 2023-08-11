@@ -41,26 +41,22 @@ public class FilmController {
 	
 	
 	@GetMapping({"/", "/accueil"})
-	public String afficherAccueil() {
+	public String afficherAccueil(Model model) {
+		model.addAttribute("movies",movies);
 		return "listeFilm";
 	}
 	
 	
 	@GetMapping("/details")
 	public String afficherdetails(@RequestParam(required = false) int id, Model model) {
-		
-		model.addAttribute("movie", movies.get(id));
+		for (Movie movie : movies) {
+			if(movie.getId() == id) {
+				model.addAttribute("movie",movie);
+				break;
+			}
+		}
 		return "detailsFilm";
 	}
-	
-   
-    @GetMapping("/details")
-
-    public String afficherdetails() {
-
-        return "detailsFilm";
-
-    }
        
 
     @GetMapping("/ajout")

@@ -107,6 +107,14 @@ public class Movie {
 	public void addOpinion(Opinion opinion) {
 		opinions.add(opinion);
 	}
+
+	@Override
+	public String toString() {
+		return "Movie [id=" + id + ", title=" + title + ", releaseDate=" + releaseDate + ", duration=" + duration
+				+ ", synopsis=" + synopsis + ", director=" + director + ", type=" + type + ", actors=" + actors
+				+ ", opinions=" + opinions + "]";
+	}
+	
 	
 
 }
