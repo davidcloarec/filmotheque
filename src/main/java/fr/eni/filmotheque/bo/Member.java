@@ -6,7 +6,7 @@ import java.util.List;
 public class Member {
 	
 	private int id;
-	private String firsname;
+	private String firstname;
 	private String lastname;
 	private String email;
 	private String password;
@@ -14,9 +14,9 @@ public class Member {
 	private List<Opinion> opinions = new ArrayList<Opinion>();
 	
 	
-	public Member(int id, String firsname, String lastname, String email, String password, boolean isAdmin) {
+	public Member(int id, String firstname, String lastname, String email, String password, boolean isAdmin) {
 		this.id = id;
-		this.firsname = firsname;
+		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
 		this.password = password;
@@ -34,13 +34,13 @@ public class Member {
 	}
 
 
-	public String getFirsname() {
-		return firsname;
+	public String getFirstname() {
+		return firstname;
 	}
 
 
-	public void setFirsname(String firsname) {
-		this.firsname = firsname;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
 

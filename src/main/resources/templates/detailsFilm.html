@@ -2,30 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Details</title>
+<title>Details Film</title>
 </head>
 
-<body>
-	<h1>Detail du film</h1>
-	<div>
-		<h3 th:text="${movie.title}">titre</h3>
-		<p>Date de sortie</p>
-	
-	
-	</div>
-<h1>Page Details Film</h1>
+<body style="margin-left : 40vw">
 
-<h2>Détail film :</h2>
-<!-- 
-	<table>
-		<tr th:text="${film.detail}">
-			<td th:text="${film.title}" />
-			<td th:text="${film.date}" />
-			<td th:text="${film.duree}"/>
-			<td th:text="${film.synospsis}"/>
-		</tr>
-	</table>
- -->
+	<h1 th:text="'Titre : '+${movie.title}">titre</h1>
+	<div style="width: 25vw">
+		<p th:text="'Date de sortie : '+${movie.releaseDate}">date</p>
+		<p th:text="'Durée : '+${movie.duration}">duree</p>
+		<p th:text="'Synopsis : '+${movie.synopsis}">synopsis</p>
+		<p th:text="'Réalisateur : '+${movie.director.firstname}+' '+${movie.director.lastname}">directeur</p>
+		<p th:text="'Genre : '+${movie.type.label}">genre</p>
+	</div>
+	<p>Listes des acteurs :</p>
+	<ul>
+		<li th:each="actor : ${movie.actors}">
+			<p th:text="${actor.firstname}+' '+${actor.lastname}">prenom nom</p>
+		</li>
+	</ul>
+	<div>
+		<div style="border: 1px solid black; padding: 10px; width: 20vw; margin-top: 20px" 
+			th:each="opinion : ${movie.opinions}">
+			<p th:text="'Commentaire : '+${opinion.opinion}">opinion</p>
+			<p th:text="'note : '+${opinion.rating}">note</p>
+			<p th:text="'Auteur : '+${opinion.member.firstname}+' '+${opinion.member.lastname}">prenom nom</p>
+		</div>
+	</div>
+
 	
 <br><br>
 <a href= "/accueil">Retour</a>

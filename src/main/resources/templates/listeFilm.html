@@ -2,18 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Liste des films</title>
 </head>
 
-<body>
-	<nav>
-		<ul>
-			<li><a th:href="@{/ajout}">Ajouter un film</a></li>
-		</ul>	
-	</nav>
+<body style="margin-left:40vw; margin-top:5vh;">
+
 	<h1>Liste de film</h1>
 
-	<div>
+	<div style="width:30vw">
 		<ul>
 		  <li th:each=" movie: ${movies}">
 
@@ -22,6 +18,8 @@
 		    <a th:href="@{/details(id=${movie.id})}">Voir détails</a>
 		  </li>
 		</ul>
+		<br>
+		<a th:href="@{/ajout}">Ajouter un film</a>
 	</div>
 </body>
 </html>
