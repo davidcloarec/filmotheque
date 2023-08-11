@@ -8,75 +8,34 @@
 </head>
 
 <body>
+	<!-- Insertion dd'un fragment -->
+	<div th:replace="fragments/menu.html"></div>
 
-<!-- Insertion dd'un fragment -->
-<div th:replace="fragments/menu.html"/> 
-    <p>
-      <span th:text="#{today}">Today</span>
-      <span th:text="${today}">11/08/2023</span>
-    </p>
-</div>
-
-<h1>Page Ajout Film</h1>
-
-<h2>Ajouter un film :</h2>
-
-<form action="/ajout" method="post">
-<label for= "title">Titre</label>
-<input type="text" id="date" name="date"> 
-
-<label for= "date">Date</label>
-<input type="date" id="date" name="date"> 
-
-<label for= "duree">Duree</label>
-<input type="number" id="date" name="date"> 
-
-<label for= "synopsis">Synopsis</label>
-<input type="text" id="synopsis" name="synopsis"> 
-
-<input type="submit"  value="Valider"><br>
-<br>
-<a href= "/accueil">Valider</a>
-<br><br>
-<a href= "/details">Voir détail Film</a>
-
-</form>
-
-<!--  
-<form th:action="@{/accueil}" th:object=${film} method="post">
-
-	<label for= "title">Titre</label>
-	<input type="text" th:field="*{title}" id="title" > <br>
+	<h1>Ajouter un film :</h1>
 	
-	<label for= "date">Date</label>
-	<input type="date" th:field="*{date}" id="date" > <br>
-	
-	<label for= "duree">Duree</label>
-	<input type="number" th:field="*{duree}" id="duree" > <br>
-	
-	<label for= "synopsis">Synopsis</label>
-	<input type="text" th:field="*{synopsis}" id="synopsis" > <br>
-	
-	<input type="submit" value="envoyer"> <br>
-</form>
--->
+	<form action="/ajout" method="post">
+		<label for= "title">Titre</label>
+		<input type="text" id="title" name="title"> 
+		
+		<label for= "releaseDate">Date</label>
+		<input type="date" id="releaseDate" name="releaseDate"> 
+		
+		<label for= "duration">Duree</label>
+		<input type="number" id="duration" name="duration"> 
+		
+		<label for= "synopsis">Synopsis</label>
+		<input type="text" id="synopsis" name="synopsis"> 
+		<!-- 
+		<select name="director">
+			<option th:each="director : ${partipants}" th:value="${director.id}">
+				${director.firstname}
+			</option>
+		</select>
+		 -->
+		<button type="submit">Ajouter le film</button>
+	</form>
 
-	<table>
-		<tr th:each="film: ${films}">
-			<td th:text="${film.title}" />
-			<td th:text="${film.date}" />
-			<td th:text="${film.duree}"/>
-			<td th:text="${film.synopsis}"/>
-		</tr>
-	</table>
-	
-
-<!-- Insertion dd'un fragment footer -->
-<div th:replace="fragments/footer.html"/> 
-    <p>
-  footer
-    </p>
-</div>
-</div>
+	<!-- Insertion dd'un fragment footer -->
+	<div th:replace="fragments/footer.html"></div>
 </body>
 </html>
