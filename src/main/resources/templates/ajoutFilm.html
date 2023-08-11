@@ -3,15 +3,16 @@
 
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <title>Ajouter un film</title>
 </head>
 
 <body>
-	<!-- Insertion dd'un fragment -->
-	<div th:replace="fragments/menu.html"></div>
-
-	<h1>Ajouter un film :</h1>
+	
+	<div th:insert="fragments/header :: my-header" /></div>
+	
+	<h2>Ajouter un film :</h2>
 	
 	<form action="/ajout" method="post">
 		<label for= "title">Titre</label>
@@ -31,7 +32,7 @@
 				${director.firstname}
 			</option>
 		</select>
-		 -->
+		-->
 		<button type="submit">Ajouter le film</button>
 	</form>
 

@@ -5,6 +5,7 @@
 <title>Details Film</title>
 </head>
 
+<<<<<<< HEAD
 <body style="margin-left : 40vw">
 
 	<h1 th:text="'Titre : '+${movie.title}">titre</h1>
@@ -28,6 +29,13 @@
 			<p th:text="'note : '+${opinion.rating}">note</p>
 			<p th:text="'Auteur : '+${opinion.member.firstname}+' '+${opinion.member.lastname}">prenom nom</p>
 		</div>
+=======
+<body>
+	<h1>Detail du film</h1>
+	<div>
+		<h3 th:text="${movie.title}">titre</h3>
+		<p>Date de sortie</p>
+>>>>>>> ajoutFilm
 	</div>
 
 	
