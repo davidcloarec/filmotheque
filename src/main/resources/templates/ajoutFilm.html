@@ -3,46 +3,30 @@
 
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<title>Insert title here</title>
+<title>filmotheque</title>
 </head>
 
 <body>
 
-<!-- Insertion dd'un fragment -->
-<div th:replace="fragments/menu.html"/> 
-    <p>
-      <span th:text="#{today}">Today</span>
-      <span th:text="${today}">11/08/2023</span>
-    </p>
-</div>
+	<!-- Insertion dd'un fragment -->
+	<!--<div th:insert="fragments/header.html" />-->
+	
+	<div th:insert="fragments/header :: my-header" /></div>
+	
+	<h2>Ajouter un film :</h2>
 
-<h1>Page Ajout Film</h1>
+	<form action="/ajout" method="post">
+		<label for="title">Titre</label> <input type="text" id="date"
+			name="date"> <label for="date">Date</label> <input
+			type="date" id="date" name="date"> <label for="duree">Duree</label>
+		<input type="number" id="date" name="date"> <label
+			for="synopsis">Synopsis</label> <input type="text" id="synopsis"
+			name="synopsis"> <input type="submit" value="Valider"><br>
+	</form>
 
-<h2>Ajouter un film :</h2>
-
-<form action="/ajout" method="post">
-<label for= "title">Titre</label>
-<input type="text" id="date" name="date"> 
-
-<label for= "date">Date</label>
-<input type="date" id="date" name="date"> 
-
-<label for= "duree">Duree</label>
-<input type="number" id="date" name="date"> 
-
-<label for= "synopsis">Synopsis</label>
-<input type="text" id="synopsis" name="synopsis"> 
-
-<input type="submit"  value="Valider"><br>
-<br>
-<a href= "/accueil">Valider</a>
-<br><br>
-<a href= "/details">Voir détail Film</a>
-
-</form>
-
-<!--  
+	<!--  
 <form th:action="@{/accueil}" th:object=${film} method="post">
 
 	<label for= "title">Titre</label>
@@ -65,18 +49,15 @@
 		<tr th:each="film: ${films}">
 			<td th:text="${film.title}" />
 			<td th:text="${film.date}" />
-			<td th:text="${film.duree}"/>
-			<td th:text="${film.synopsis}"/>
+			<td th:text="${film.duree}" />
+			<td th:text="${film.synopsis}" />
 		</tr>
 	</table>
-	
 
-<!-- Insertion dd'un fragment footer -->
-<div th:replace="fragments/footer.html"/> 
-    <p>
-  footer
-    </p>
-</div>
-</div>
+	<!-- Insertion dd'un fragment footer -->
+	<div th:replace="fragments/footer.html" />
+		<p>footer</p>
+	</div>
+
 </body>
 </html>

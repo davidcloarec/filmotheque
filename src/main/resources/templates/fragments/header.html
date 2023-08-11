@@ -3,10 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}"/>
 </head>
 
 <body>
-<h1> Header</h1>
+<h1>Header</h1>
+
+<ul th:fragment="my-header">
+	<li><a th:href="@{/}">Accueil</a></li>
+	<li><a th:href="@{/ajout}">Ajouter un film</a></li>
+	<li><a th:href="@{/accueil}">Modifier un film</a></li>
+</ul>
 
 </body>
 </html>
