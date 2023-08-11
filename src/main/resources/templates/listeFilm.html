@@ -5,6 +5,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<nav>
+		<ul>
+			<li>Ajouter un film</li>
+		</ul>	
+	</nav>
+	<h1>Liste de film</h1>
+	
+	<div>
+		<ul>
+		  <li th:each=" movie = ${movies}">
+		    <h2 th:text="${movie.title}">Titre</h2>
+		    <p th:text="${movie.synopsis}">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet...</p>
+		    <a th:href="@{/details(movieID=${movie.id})}">Voir détails</a>
+		  </li>
+		</ul>
+	</div>
 </body>
 </html>
