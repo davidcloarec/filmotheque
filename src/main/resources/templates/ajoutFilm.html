@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 <meta charset="UTF-8">
+
 <title>Insert title here</title>
 </head>
 
 <body>
+
+<!-- Insertion dd'un fragment -->
+<div th:replace="fragments/menu.html"/> 
+    <p>
+      <span th:text="#{today}">Today</span>
+      <span th:text="${today}">11/08/2023</span>
+    </p>
+</div>
+
 <h1>Page Ajout Film</h1>
 
 <h2>Ajouter un film :</h2>
@@ -60,6 +71,12 @@
 	</table>
 	
 
+<!-- Insertion dd'un fragment footer -->
+<div th:replace="fragments/footer.html"/> 
+    <p>
+  footer
+    </p>
+</div>
 </div>
 </body>
 </html>
