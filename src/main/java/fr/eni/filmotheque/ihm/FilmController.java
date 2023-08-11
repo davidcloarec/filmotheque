@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,9 +15,12 @@ import fr.eni.filmotheque.bo.Opinion;
 import fr.eni.filmotheque.bo.Participant;
 import fr.eni.filmotheque.bo.Type;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
 @Controller
 public class FilmController {
-	
+
 	Participant director = new Participant(1, "jean", "dupont");
 	List<Participant> actors = new ArrayList<Participant>(); 
 	List<Movie> movies = new ArrayList<Movie>();
@@ -49,10 +53,28 @@ public class FilmController {
 		return "detailsFilm";
 	}
 	
-	
-	@GetMapping("/ajout")
-	public String ajouterFilm() {
-		return "ajoutFilm";
-	}
+   
+    @GetMapping("/details")
 
+    public String afficherdetails() {
+
+        return "detailsFilm";
+
+    }
+       
+
+    @GetMapping("/ajout")
+
+    public String afficherFormulaireFilm() {
+
+        return "ajoutFilm";
+
+    }
+    
+    @PostMapping("/ajout")
+    public String ajouterFilm() {
+        return "redirect:/accueil";
+
+    }
+	
 }
