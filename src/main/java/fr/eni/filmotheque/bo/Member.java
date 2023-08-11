@@ -1,5 +1,6 @@
 package fr.eni.filmotheque.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
@@ -10,7 +11,7 @@ public class Member {
 	private String email;
 	private String password;
 	private boolean isAdmin;
-	private List<Opinion> opinions;
+	private List<Opinion> opinions = new ArrayList<Opinion>();
 	
 	
 	public Member(int id, String firsname, String lastname, String email, String password, boolean isAdmin) {

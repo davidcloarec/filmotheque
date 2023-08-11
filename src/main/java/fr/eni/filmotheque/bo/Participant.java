@@ -1,5 +1,6 @@
 package fr.eni.filmotheque.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Participant {
@@ -7,7 +8,7 @@ public class Participant {
 	private int id;
 	private String firstname;
 	private String lastname;
-	private List<Movie> movies;
+	private List<Movie> movies = new ArrayList<Movie>();
 	
 	
 	public Participant(int id, String firstname, String lastname) {

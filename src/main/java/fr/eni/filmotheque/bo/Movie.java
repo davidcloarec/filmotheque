@@ -1,5 +1,6 @@
 package fr.eni.filmotheque.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Movie {
@@ -11,8 +12,8 @@ public class Movie {
 	private String synopsis;
 	private Participant director;
 	private Type type;
-	private List<Participant> actors;
-	private List<Opinion> opinions;
+	private List<Participant> actors = new ArrayList<Participant>();
+	private List<Opinion> opinions = new ArrayList<Opinion>();
 	
 	public Movie(int id, String title, int releaseDate, int duration, String synopsis, Participant director,
 			List<Participant> actors, Type type) {

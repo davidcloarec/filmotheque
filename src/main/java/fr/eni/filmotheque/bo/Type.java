@@ -1,12 +1,13 @@
 package fr.eni.filmotheque.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Type {
 	
 	private int id;
 	private String label;
-	private List<Movie> movies;
+	private List<Movie> movies = new ArrayList<Movie>();
 	
 	
 	public Type(int id, String label) {
